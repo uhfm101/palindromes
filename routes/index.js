@@ -25,6 +25,11 @@ function pChecker(phrase) {
     return true;
 } else{
     return false;
+  } function removeP(phrase){
+    for(let i = 0; i < phrase; i++){
+      pChecker(phrase).replace(/;|'|"|:|!|./g, "");
+    }
+    return true;
   }
 }
 
