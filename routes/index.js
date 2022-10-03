@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res){
   res.render('index', {
     phrase: req.body.userText,
-    message: getResult(req.body.userText)
+    message: other(req.body.userText),
   })
 })
 
@@ -25,11 +25,6 @@ function pChecker(phrase) {
     return true;
 } else{
     return false;
-  } function removeP(phrase){
-    for(let i = 0; i < phrase; i++){
-      pChecker(phrase).replace(/;|'|"|:|!|./g, "");
-    }
-    return true;
   }
 }
 
@@ -40,3 +35,30 @@ function getResult(phrase){
   return `${phrase} is not a palindrome`
 }
 
+function other(phrase){
+  let reverse = phrase.split("");
+  reverse = reverse.reverse()
+  reverse = reverse.join("")
+  if(pChecker(phrase)){
+    return `${reverse}`
+  }
+  return `${reverse}`
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function removeP(phrase){
+  for(let i = 0; i < phrase; i++){
+
+  }
+}
